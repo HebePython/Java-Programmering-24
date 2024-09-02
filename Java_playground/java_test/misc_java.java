@@ -11,7 +11,7 @@ public class misc_java {
 
     static void player(int playerPoints, String playerName, int playerDice ) {
         int points = 0;
-        String playerName = "";
+        String playerNames = "";
         int diceValue = 0;
 
     }
