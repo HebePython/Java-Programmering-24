@@ -1,10 +1,9 @@
 package Java_playground.java_test;
 import java.util.Scanner;
-import java.lang.Math;
 
 public class java_random_test {
 
-    static int randomMethod() { //Dice rolls generator, simulates 6-sided die.
+    static int randomMethod() { //Dice roll generator, simulates 6-sided die.
         int x = (int)(Math.random() *6) + 1;
         return x;    
     }
@@ -13,6 +12,7 @@ public class java_random_test {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter name: ");
         String userName = sc.nextLine();
+        sc.close();
         return userName;
     }
     public static void main(String[] args) {
@@ -32,6 +32,7 @@ public class java_random_test {
             Scanner usrInput = new Scanner(System.in); //Asks for user input whether to keep playing.
             System.out.println("Would you like to roll the dice? y or n: ");
             String yesOrNo = usrInput.nextLine();
+            usrInput.close();
 
             if (yesOrNo.equals("y")) { //Checks user input. Option to exit loop.
                 System.out.println(player1Name + "rolls the dice and gets a " + player1Dice + "\n" + player2Name + "rolls the dice and gets a  " + player2Dice);
@@ -40,7 +41,7 @@ public class java_random_test {
                 System.exit(0);
             }
 
-            if (player1Dice > player2Dice) { // checks who won dice roll
+            if (player1Dice > player2Dice) { // checks who won dice roll and adds points
                 player1Points += 1;
                 System.out.println(player1Name + " wins and gets 1 point!");
             } else if (player1Dice < player2Dice) {
@@ -57,7 +58,7 @@ public class java_random_test {
                 System.out.println(player2Name + "wins it all! Good game!");
                 break;
             } else; {
-                continue;
+                continue; // Unnecessary?
             }
         }
     }        
