@@ -20,10 +20,10 @@ public class Uppgift2 {
     public static void main(String[] args) {
 
         int[] myNumbers = getNumbers();  //call on method
-        int max = myNumbers[0]; //assign max first number
-        for (int i = 0; i < myNumbers.length; i++) { // loop through array
+        int max = myNumbers[0]; 
+        for (int i = 0; i < myNumbers.length; i++) { 
             if (myNumbers[i] > max) { // compare current number vs new array number
-                max = myNumbers[i]; //assign highest value
+                max = myNumbers[i]; 
             }
         }
 
