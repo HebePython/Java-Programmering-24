@@ -1,8 +1,11 @@
-package Java_playground.java_test;
+package Java_playground.Junit_testing_Java;
 
 import static org.junit.jupiter.api.Assertions.assertEquals; 
 
 import org.junit.jupiter.api.Test;
+
+import Java_playground.java_test.Uppgift3;
+
 import org.junit.jupiter.api.BeforeEach;
 //import org.junit.jupiter.api.DisplayName;
 //import org.junit.jupiter.api.RepeatedTest;
