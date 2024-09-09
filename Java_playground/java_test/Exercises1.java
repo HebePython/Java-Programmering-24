@@ -24,11 +24,11 @@ public class Exercises1 {
 
         //1.7 
 
-        Ship calypso = new Ship();
+   //     Ship calypso = new Ship();
 
-        System.out.println(calypso);
-        Ship ssKaparen = calypso;
-        System.out.println(ssKaparen);
+    //    System.out.println(calypso);
+    //    Ship ssKaparen = calypso;
+   //     System.out.println(ssKaparen);
 
         //1.8
         
