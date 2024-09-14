@@ -1,5 +1,4 @@
-package Java_playground.java_test;
-import java.text.MessageFormat;
+package Java_playground.java_test.Exercises_Challenges;
 
 public class Exervise2Challenge {
 

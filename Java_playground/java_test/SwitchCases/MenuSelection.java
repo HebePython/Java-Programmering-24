@@ -1,4 +1,4 @@
-package Java_playground.java_test;
+package Java_playground.java_test.SwitchCases;
 import java.util.Scanner;
 
 public class MenuSelection {

@@ -1,4 +1,4 @@
-package Java_playground.java_test; //Skriv ett program som tar emot ett nummer från user och skriver ut i terminalen om det är positivt, negativt eller noll.
+package Java_playground.java_test.Uppgifter; //Skriv ett program som tar emot ett nummer från user och skriver ut i terminalen om det är positivt, negativt eller noll.
 import java.util.Scanner;
 
 public class Uppgift1 {

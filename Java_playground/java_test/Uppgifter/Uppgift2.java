@@ -1,4 +1,4 @@
-package Java_playground.java_test; //Ta emot 3 nummer från user och skriv ut vilket som är störst
+package Java_playground.java_test.Uppgifter; //Ta emot 3 nummer från user och skriv ut vilket som är störst
 import java.util.Scanner;
 
 public class Uppgift2 { 

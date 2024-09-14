@@ -1,6 +1,6 @@
-package Java_playground.java_test;
-import java.util.Scanner;
+package Java_playground.java_test.BranchingStatements;
 import java.text.MessageFormat;
+import java.util.Scanner;
 
 public class WarehouseInventory {
     public static void main(String[] args) {

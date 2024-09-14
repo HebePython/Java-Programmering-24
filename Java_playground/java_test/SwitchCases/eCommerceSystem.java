@@ -1,6 +1,6 @@
-package Java_playground.java_test;
-import java.util.Scanner;
+package Java_playground.java_test.SwitchCases;
 import java.text.MessageFormat;
+import java.util.Scanner;
 
 
 public class eCommerceSystem {

@@ -1,7 +1,7 @@
-package Java_playground.java_test; //Skriv ett program som tar emot ett nummer från user och skriver ut i terminalen om det är positivt, negativt eller noll.
-import java.util.Scanner;
+package Java_playground.java_test.Uppgifter; //Skriv ett program som tar emot ett nummer från user och skriver ut i terminalen om det är positivt, negativt eller noll.
 import java.util.InputMismatchException;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class Uppgift3 {
 

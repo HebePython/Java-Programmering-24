@@ -1,8 +1,8 @@
-package Java_playground.java_test;
+package Java_playground.java_test.Exercises_Challenges;
 import java.text.MessageFormat;
-import java.util.Scanner;
-import java.util.Random;
 import java.util.InputMismatchException;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Exercises1 {
     
