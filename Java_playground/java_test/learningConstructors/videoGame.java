@@ -8,14 +8,10 @@ public class Videogame {
 
 
     public Videogame(String gameTitle, int gameReleaseYear, double gameScore) {
-        releaseYear = gameReleaseYear;
-        title = gameTitle;
-        score = gameScore;
+        this.releaseYear = gameReleaseYear;
+        this.title = gameTitle;
+        this.score = gameScore;
 
-    }
-
-    public static void main(String[] args) {
-        
     }
     
 }
