@@ -1,13 +1,13 @@
 package Java_playground.java_test.learningConstructors;
 
-public class videoGame {
+public class Videogame {
     int releaseYear;
     String title;
     double score; // 1-10
 
 
 
-    public videoGame(String gameTitle, int gameReleaseYear, double gameScore) {
+    public Videogame(String gameTitle, int gameReleaseYear, double gameScore) {
         releaseYear = gameReleaseYear;
         title = gameTitle;
         score = gameScore;
