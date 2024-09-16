@@ -1,4 +1,4 @@
-package Java_playground.java_test.learningConstructors;
+package Java_playground.java_test.learningConstructors.videogameclass;
 
 public class Videogame {
     int releaseYear = 1994;

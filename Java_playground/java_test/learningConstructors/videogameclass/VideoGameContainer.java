@@ -1,6 +1,6 @@
-package Java_playground.java_test.learningConstructors;
+package Java_playground.java_test.learningConstructors.videogameclass;
 
-public class videoGameContainer {
+public class VideoGameContainer {
     String name = "Videogame box";
 
     Videogame game1 = new Videogame();

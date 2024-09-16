@@ -1,10 +1,10 @@
- package Java_playground.java_test.learningConstructors;
+package Java_playground.java_test.learningConstructors.videogameclass;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        videoGameContainer games = new videoGameContainer();
+        VideoGameContainer games = new VideoGameContainer();
         games.game1.title = "C&C";
         games.game1.releaseYear = 1991;
         games.game1.score = 9.1;
