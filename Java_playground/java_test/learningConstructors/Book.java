@@ -6,6 +6,9 @@ public class Book {
     String author;
     String title;
 
+    Book() {
+        
+    }
     public static void main(String[] args) {
 
         Book LOTRBook = new Book();

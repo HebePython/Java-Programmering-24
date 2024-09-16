@@ -11,10 +11,7 @@ public class Main {
         System.out.println(String.format("Game1\nGame title: %s\nRelease year: %d\nGame score: %2.1f", games.game1.title, games.game1.releaseYear, games.game1.score));
         System.out.println(String.format("Game2\nGame title: %s\nRelease year: %d\nGame score: %2.1f", games.game2.title, games.game2.releaseYear, games.game2.score));
        
-        Videogame game3 = new Videogame();
-        game3.title = "Diablo";
-        game3.releaseYear = 2001;
-        game3.score = 9.8;
+        Videogame game3 = new Videogame("Diablo", 2001, 9.8);
         System.out.println(String.format("Game3\nGame title: %s\nRelease year: %d\nGame score: %2.1f", game3.title, game3.releaseYear, game3.score));   
        
         Videogame game4 = games.game1;

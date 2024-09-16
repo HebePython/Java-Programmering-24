@@ -13,10 +13,10 @@ public class Car {
 
 
     public Car(String carMake, String carModel, int carYear, String carColor) {
-        make = carMake;
-        model = carModel;
-        year = carYear;
-        color = carColor;
+        this.make = carMake;
+        this.model = carModel;
+        this.year = carYear;
+        this.color = carColor;
     }
 
 
