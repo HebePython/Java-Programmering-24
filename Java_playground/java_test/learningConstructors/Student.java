@@ -7,9 +7,9 @@ public class Student {
     int age;
 
     public Student(double studentGrade, String studentName, int studentAge) {
-        grade = studentGrade;
-        name = studentName;
-        age = studentAge;
+        this.grade = studentGrade;
+        this.name = studentName;
+        this.age = studentAge;
 
     }
 
