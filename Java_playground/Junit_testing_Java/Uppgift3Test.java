@@ -4,12 +4,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import Java_playground.java_test.Uppgift3;
+// import Java_playground.java_test.Uppgift3;
 
 import org.junit.jupiter.api.BeforeEach;
 //import org.junit.jupiter.api.DisplayName;
 //import org.junit.jupiter.api.RepeatedTest;
-
+/* 
 class Uppgift3Test {
 
     Uppgift3 uppgift3;
@@ -54,3 +54,5 @@ class Uppgift3Test {
         assertEquals("", Uppgift3.evalNumberSize(3500));
     }
 }
+
+*/

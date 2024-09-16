@@ -1,11 +1,11 @@
 package Java_playground.java_test.learningConstructors;
 
 public class House {
-    int squareMeters;
-    int floors;
-    int worth;
-    int year;
-    String adress;
+    int squareMeters = 100;
+    int floors = 1;
+    int worth = 100000;
+    int year = 1969;
+    String adress = "33 Donovan ave.";
 
     House(int squareMeters, int floors, int worth, int year, String adress){
         this.squareMeters = squareMeters;
@@ -32,6 +32,10 @@ class main{
     public static void main(String[] args) {
         House myHouse1 = new House(300, 3, 150000, 1991, "22 Leighton str.");
         myHouse1.printMyHouseDetails();
+        House myHouse2 = new House();
+        myHouse2.printMyHouseDetails();
+        House myHouse3 = myHouse1;
+        myHouse3.printMyHouseDetails();
 
     }
 }
