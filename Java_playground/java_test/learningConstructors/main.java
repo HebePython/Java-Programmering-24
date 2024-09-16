@@ -4,6 +4,6 @@ public class main {
     
     public static void main(String[] args) {
         videoGameContainer games = new videoGameContainer();
-        System.out.println(games.game1.title);
+        System.out.println(String.format("Game title: %s\nRelease year: %d\nGame score: %2.1f", games.game1.title, games.game1.releaseYear, games.game1.score));
     }
 }
