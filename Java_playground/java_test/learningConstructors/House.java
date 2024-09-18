@@ -34,7 +34,7 @@ class MyCar {
     int carWorth = 10000;
     double carKM = 122.6; //miles
 
-    myCar (String carModel, int carWorth, double carKM) {
+    MyCar(String carModel, int carWorth, double carKM) {
         this.carModel = carModel;
         this.carWorth = carWorth;
         this.carKM = carKM;
