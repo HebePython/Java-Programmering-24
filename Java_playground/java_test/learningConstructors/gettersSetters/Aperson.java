@@ -29,7 +29,7 @@ public class Aperson {
     }
     public void setPersons(int persons) {
         Aperson.persons += 1;
-        System.out.printf("\nA new person has been added!\nThere are now %d persons.\n", Aperson.persons);
+        System.out.printf("\nA new person has been added!\nThere are now %d persons.\n\n", Aperson.persons);
     }
     public void setAge(int age) {
         if (age >= 1 && age <= 99) {
