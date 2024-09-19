@@ -29,8 +29,10 @@ public class House {
         System.out.println(String.format("The house has %d square meters\nIt has %d floors\nIt's worth $%d\nIt was built in %d\nAdress is %s", this.squareMeters, this.floors, this.worth, this.year, this.adress));
     }
     
-    public int increaseHouseWorth(int worth) {
-        this.worth = (int) (worth + (worth * 0.05));
+    public int increaseHouseWorth(int worth, int years) {
+        for (int i = 0; i < years; i++) {
+            this.worth = (int) (this.worth * 1.05);
+        }
         return this.worth;
     }
 }
@@ -49,14 +51,17 @@ class MyCar {
     public MyCar(){
 
     }
-    public int carDecreaseWorth() {
-        this.carWorth = (int) ((int) carWorth * 0.8); // goes down 20%
-        return carWorth;
+    public int carDecreaseWorth(int worth, int years) {
+        for (int i = 0; i < years; i++) {
+            this.carWorth = (int) ((int) this.carWorth * 0.8); // goes down 20%
+        } 
+        return this.carWorth;
     }
  
     public void printMyDetails(){
         System.out.println(String.format("The carmodel is: %s\nIt is worth: $%d\nIt has run %.2f miles", this.carModel, this.carWorth, this.carKM));
     }
+
 }
 
 class Person {
@@ -84,8 +89,10 @@ class Person {
         System.out.println(String.format("Person is called %s\nPerson's occupation is %s\nPerson is %d years old\nPerson's sex is %c\nPerson is %1.2fcm long\nPerson lives on %s\nThey own a %s", this.name, this.occupation, this.age, this.sex, this.length, this.homeAdress, myCar));
     }
 
-    public int gettingOld(int age) {
-        this.age = age++;
+    public int gettingOld(int age, int years) {
+        for (int i = 0; i <= years; i++) {
+            this.age = age++;
+        }
         return this.age;
 
     }
@@ -106,11 +113,22 @@ class Main{
         Person myPerson2 = new Person("Harry Harrysson", "Software tester", 39, 'M', 1.74, myHouse1.adress);
         Person myPerson3 = new Person("Sally Sallydottir", "Singer", 22, 'F', 1.68, myHouse2.adress);
 
+        myPerson1.gettingOld(myPerson1.age, 20);
+        myPerson2.gettingOld(myPerson2.age, 20);
+        myPerson3.gettingOld(myPerson3.age, 20);
+        myHouse1.increaseHouseWorth(myHouse1.worth, 20);
+        myHouse2.increaseHouseWorth(myHouse2.worth, 20);
+        car1.carDecreaseWorth(car1.carWorth, 20);
+        car2.carDecreaseWorth(car2.carWorth, 20);
+
 
         myPerson1.printMyDetails(myHouse2.aCar);
         myPerson2.printMyDetails(myHouse1.aCar);
         myPerson3.printMyDetails(myHouse2.aCar);
-  
+        car1.printMyDetails();
+        car2.printMyDetails();
+        myHouse1.printMyDetails();
+        myHouse2.printMyDetails();
   
 
     }
