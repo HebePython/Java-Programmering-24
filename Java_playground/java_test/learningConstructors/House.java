@@ -8,7 +8,7 @@ public class House {
     String adress = "33 Donovan ave.";
     String aCar = "";
 
-    House(int squareMeters, int floors, int worth, int year, String adress, String aCar){
+    public House(int squareMeters, int floors, int worth, int year, String adress, String aCar){
         this.squareMeters = squareMeters;
         this.floors = floors;
         this.worth = worth;
@@ -17,11 +17,11 @@ public class House {
         this.aCar = aCar;
     }
 
-    House(){
+    public House(){
         
     }
 
-    House(String homeAdress){
+    public House(String homeAdress){
         this.adress = homeAdress;
     }
 
@@ -29,6 +29,10 @@ public class House {
         System.out.println(String.format("The house has %d square meters\nIt has %d floors\nIt's worth $%d\nIt was built in %d\nAdress is %s", this.squareMeters, this.floors, this.worth, this.year, this.adress));
     }
     
+    public int increaseHouseWorth(int worth) {
+        this.worth = (int) (worth + (worth * 0.05));
+        return this.worth;
+    }
 }
 
 class MyCar {
@@ -36,14 +40,22 @@ class MyCar {
     int carWorth = 10000;
     double carKM = 122.6; //miles
 
-    MyCar(String carModel, int carWorth, double carKM) {
+    public MyCar(String carModel, int carWorth, double carKM) {
         this.carModel = carModel;
         this.carWorth = carWorth;
         this.carKM = carKM;
     }
 
-    MyCar(){
+    public MyCar(){
 
+    }
+    public int carDecreaseWorth() {
+        this.carWorth = (int) ((int) carWorth * 0.8); // goes down 20%
+        return carWorth;
+    }
+ 
+    public void printMyDetails(){
+        System.out.println(String.format("The carmodel is: %s\nIt is worth: $%d\nIt has run %.2f miles", this.carModel, this.carWorth, this.carKM));
     }
 }
 
@@ -55,7 +67,7 @@ class Person {
     double length = 1.80;
     String homeAdress = "";
 
-    Person (String name, String occupation, int age, char sex, double length, String homeAdress) {
+    public Person (String name, String occupation, int age, char sex, double length, String homeAdress) {
         this.name = name;
         this.occupation = occupation;
         this.age = age;
@@ -64,12 +76,18 @@ class Person {
         this.homeAdress = homeAdress;
     }
 
-    Person () {
+    public Person () {
 
     }
 
     public void printMyDetails(String myCar) {
         System.out.println(String.format("Person is called %s\nPerson's occupation is %s\nPerson is %d years old\nPerson's sex is %c\nPerson is %1.2fcm long\nPerson lives on %s\nThey own a %s", this.name, this.occupation, this.age, this.sex, this.length, this.homeAdress, myCar));
+    }
+
+    public int gettingOld(int age) {
+        this.age = age++;
+        return this.age;
+
     }
 }
 
