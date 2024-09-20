@@ -1,4 +1,4 @@
-package Java_playground.java_test.Lab1;
+package Java_playground.java_test.Lab1.DiceLab;
 import java.util.Random;
 import java.util.Scanner;
 
