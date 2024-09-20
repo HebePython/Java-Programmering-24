@@ -26,8 +26,8 @@ class Player {
     int points = 0;
     Die dice;
 
-    Player() { //constructor
-        this.name = getName(name);
+    Player(String name) { //constructor
+        this.name = name;
     }
 
     public String getName(String name) {
@@ -65,11 +65,27 @@ class DiceGame {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        int maxRounds, rounds = 0;
         // TO DO
         // import scanner, ask how many rounds to play.
+        System.out.println("Hello, welcome to DiceGame\nHow many rounds would you like to play? ");
+        maxRounds = sc.nextInt();
+
         // Ask for player name, create new player object.
+        System.out.println("Enter your name: ");
+        Player player1 = new Player(sc.nextLine());
 
         //While loop with round > maxrounds?
+        while (rounds < maxRounds) {
+            player1.addDie(); //creates new dice object, 
+            System.out.println("Please guess a number 1-6: ");
+            int usrGuess = sc.nextInt();
+            if (usrGuess == player1.dice.currentValue) {
+                player1.increaseScore();
+            } else {
+                System.out.println("You guessed wrong!");
+            }
+        }
         // player guess = scanner object
         // check if player usrGuess == dice.currentValue
         // if yes increaseScore method called.
