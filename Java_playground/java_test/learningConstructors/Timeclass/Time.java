@@ -8,23 +8,23 @@ public class Time {
     public Time(int h) {
         this.hours = h;
     }
-    public Time(int h, int m) {
+    public Time(int h, int m) { 
         this.hours = h;
         this.minutes = m;
     }
-    public Time(int h, int m, int s) {
+    public Time(int h, int m, int s) { //constructor for 3 variables, calls setter.
         setTime(h, m, s);
     }
-    public int getHours() {
+    public int getHours() { //getter for hours
         return hours;
     }
-    public int getMinutes() {
+    public int getMinutes() { //getter for min
         return minutes;
     }
-    public int getSeconds() {
+    public int getSeconds() { //getter for sec
         return seconds;
     }
-    public void setTime(int hours, int minutes, int seconds) {
+    public void setTime(int hours, int minutes, int seconds) { //setter for time. calls validate time.
         validateTime(hours, minutes, seconds);
         this.hours = hours;
         this.minutes = minutes;
@@ -32,9 +32,9 @@ public class Time {
 
     }
 
-    private void validateTime(int h, int m, int s){
-        try {
-            if (m < 0 || m > 59) {
+    private void validateTime(int h, int m, int s){ //Validates time and throws error.
+        try {                                       // Could add a system.exit() on error?
+            if (m < 0 || m > 59) {                  // Could add scanner & while loop to keep asking for a legal time
                 throw new IllegalArgumentException("Time: bad minutes value: " + h + "." + m);        
             }
             if (s < 0 || s > 59) {
@@ -48,7 +48,7 @@ public class Time {
         } 
     }
 
-    public boolean isAm(int value) {
+    public boolean isAm(int value) { //checks for AM PM method
         if (value < 12) {
             return true;
         } else {
@@ -56,24 +56,24 @@ public class Time {
         }
     }
 
-    public void toString(int hours, int minutes, int seconds) {
+    public void toString(int hours, int minutes, int seconds) { //prints in 24 hour format
         System.out.printf("%02d:%02d:%02d\n", 
         this.hours, this.minutes, this.seconds);
     }
-    public void toString12(int hours, int minutes, int seconds) {
+    public void toString12(int hours, int minutes, int seconds) { //prints in 12 hour format.
 
         String amPm = "PM";
         
-        if (isAm(this.hours) == true) {
+        if (isAm(this.hours) == true) { //calls isAM metho to check AM/PM
             amPm = "AM";
         }
-        if (this.hours > 12) {
+        if (this.hours > 12) { // turns 24 format -> 12 hr format.
             this.hours -= 12;
         }
         System.out.printf("%d:%02d:%02d %s\n", this.hours, this.minutes, this.seconds, amPm);
     }
 
-    public void incrSecond() {
+    public void incrSecond() { //increases seconds and calls min if seconds are at 59
 
         if (this.seconds == 59) {
             incrMin();
@@ -84,8 +84,8 @@ public class Time {
         
         
     }
-    public void incrMin() { 
-        
+    public void incrMin() { //increases min and calls incrhours if minutes are at 59 and reset to 0
+
         if (this.minutes != 59 && this.seconds == 59) {
             this.minutes++;
         } else if (this.minutes == 59) {
@@ -93,7 +93,7 @@ public class Time {
             this.minutes = 0;
         }
     }
-    public void incrHour() {
+    public void incrHour() { //increases hours and resets if hrs at 23. 
         
         if (this.hours != 23 && this.minutes == 59) {
             this.hours++;
@@ -101,17 +101,15 @@ public class Time {
             this.hours = 0;
         }
     }
-    public void increaseTime(int incrAmount) {
-    for (int i = 0; i < incrAmount; i++) {
-        
+    public void increaseTime(int incrAmount) { //increase time methos with loop, calls incrsec
+    for (int i = 0; i < incrAmount; i++) {      
         incrSecond();
-
         }
         validateTime(this.hours, this.minutes, this.seconds);
     }
 
-    public int compareTo(int otherhour, int othermin, int othersec) {
-        if (this.hours - otherhour != 0 ) {
+    public int compareTo(int otherhour, int othermin, int othersec) { //compares hrs, mins, secs
+        if (this.hours - otherhour != 0 ) {                           
            return this.hours - otherhour;
         } else if (this.minutes - othermin != 0) {
             return this.minutes - othermin; 
