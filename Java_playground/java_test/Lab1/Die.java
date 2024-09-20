@@ -1,34 +1,38 @@
 package Java_playground.java_test.Lab1;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Die {
     int currentValue;
-    int maxValue;
+    int maxDiceValue;
+    private Random rand = new Random();
 
-    Die(int maxValue) { // constructor.
-        this.maxValue = getMaxDie();
+    Die(int maxDiceValue) { // constructor.
+        this.maxDiceValue = maxDiceValue;
     }
 
-    public void roll() { // set current value to int 1-maxValue.
-        Random rand = new Random();
-        this.currentValue = rand.nextInt(this.maxValue - 1) + 1;
+    public void roll() { // set current value to int 1-maxDiceValue.
+        this.currentValue = rand.nextInt(this.maxDiceValue - 1);
     }
 
     public int getMaxDie() { //getter
-        return maxValue;
+        return maxDiceValue;
     }
-
-    public void setDie() { //setter
-
-    }
-
 
 }
 
 class Player {
     String name;
-    int points;
+    int points = 0;
     Die dice;
+
+    Player() { //constructor
+        this.name = getName(name);
+    }
+
+    public String getName(String name) {
+        return name;
+    }
 
     public int getPoint() { //getter points
         return points;
@@ -39,11 +43,12 @@ class Player {
     }
 
     public void rollDice() { //roll dice,
-
+        System.out.println("You roll the dice and get: " + getDieValue());
     }
 
     public int getDieValue(){ //returns value of dice roll
-        return 4; //<--diceValue
+        dice.roll(); // <- should prob not be here?
+        return dice.currentValue; //<--diceValue call roll method from Die class
     }
 
     public void increaseScore() {
@@ -51,21 +56,24 @@ class Player {
     }
 
     public void addDie() { //creates new die, adds to player.
-
+        Die dice = new Die(6);
     }
 }
 
 class DiceGame {
 
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
         // TO DO
         // import scanner, ask how many rounds to play.
         // Ask for player name, create new player object.
 
         //While loop with round > maxrounds?
         // player guess = scanner object
-        // check if player guess == what the dice rolls.
+        // check if player usrGuess == dice.currentValue
         // if yes increaseScore method called.
         
+        sc.close();
     }
 }
