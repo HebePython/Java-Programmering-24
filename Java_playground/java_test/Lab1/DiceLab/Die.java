@@ -80,20 +80,20 @@ class DiceGame {
         Player player1 = new Player(sc.nextLine());
         player1.addDie(); //creates new dice object, 
 
-        while (rounds < maxRounds) { //While loop with round > maxrounds
-            
+        while (rounds < maxRounds) { 
+            rounds++; //round finished, add 1 to round counter.
             System.out.println("Please guess a number 1-6: ");
             int usrGuess = sc.nextInt();// player guess = scanner object
 
-            player1.rollDice();
-            //future update, add a 2nd guess. and the program will tell you under or over.
+            player1.rollDice(); //future update, add a 2nd guess. and the program will tell you under or over.
+            
             if (usrGuess == player1.getDieValue()) {// check if player usrGuess == dice.currentValue
                 player1.increaseScore(); // if yes increaseScore method called.
                 System.out.println("Hurray! You guessed correctly!\nYour current score is: " + player1.getPoint());
             } else {
                 System.out.println("You guessed wrong!\nThe correct number was: " + player1.getDieValue());
             }
-            rounds++; //round finished, add 1 to round counter.
+            
         }
         
         System.out.println("Game over, Thanks for playing " + player1.name + "\nYour score was: " + player1.getPoint());
