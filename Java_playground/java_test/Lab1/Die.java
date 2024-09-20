@@ -93,11 +93,10 @@ class DiceGame {
             } else {
                 System.out.println("You guessed wrong!\nThe correct number was: " + player1.getDieValue());
             }
-            rounds++;
+            rounds++; //round finished, add 1 to round counter.
         }
         
-        
-        
+        System.out.println("Game over, Thanks for playing " + player1.name + "\nYour score was: " + player1.getPoint());
         
         sc.close();
     }
