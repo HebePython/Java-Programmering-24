@@ -12,11 +12,14 @@ public class Die {
     }
 
     public void roll() { // set current value to int 1-maxDiceValue.
-        this.currentValue = rand.nextInt(this.maxDiceValue - 1);
+        this.currentValue = rand.nextInt(this.maxDiceValue) + 1;
     }
 
     public int getMaxDie() { //getter
         return maxDiceValue;
+    }
+    public int getCurrentValue() {
+        return currentValue;
     }
 
 }
@@ -43,20 +46,20 @@ class Player {
     }
 
     public void rollDice() { //roll dice,
+        dice.roll();
         System.out.println("You roll the dice and get: " + getDieValue());
     }
 
     public int getDieValue(){ //returns value of dice roll
-        dice.roll(); // <- should prob not be here?
-        return dice.currentValue; //<--diceValue call roll method from Die class
+        return dice.getCurrentValue(); //<--get current value, thru getter.
     }
 
     public void increaseScore() {
         this.points++;
     }
 
-    public void addDie() { //creates new die, adds to player.
-        Die dice = new Die(6);
+    public void addDie() { //creates new die
+        this.dice = new Die(6);
     }
 }
 
@@ -70,25 +73,31 @@ class DiceGame {
         // import scanner, ask how many rounds to play.
         System.out.println("Hello, welcome to DiceGame\nHow many rounds would you like to play? ");
         maxRounds = sc.nextInt();
+        sc.nextLine();
 
         // Ask for player name, create new player object.
         System.out.println("Enter your name: ");
         Player player1 = new Player(sc.nextLine());
+        player1.addDie(); //creates new dice object, 
 
-        //While loop with round > maxrounds?
-        while (rounds < maxRounds) {
-            player1.addDie(); //creates new dice object, 
+        while (rounds < maxRounds) { //While loop with round > maxrounds
+            
             System.out.println("Please guess a number 1-6: ");
-            int usrGuess = sc.nextInt();
-            if (usrGuess == player1.dice.currentValue) {
-                player1.increaseScore();
+            int usrGuess = sc.nextInt();// player guess = scanner object
+
+            player1.rollDice();
+
+            if (usrGuess == player1.getDieValue()) {// check if player usrGuess == dice.currentValue
+                player1.increaseScore(); // if yes increaseScore method called.
+                System.out.println("Hurray! You guessed correctly!\nYour current score is: " + player1.getPoint());
             } else {
-                System.out.println("You guessed wrong!");
+                System.out.println("You guessed wrong!\nThe correct number was: " + player1.getDieValue());
             }
+            rounds++;
         }
-        // player guess = scanner object
-        // check if player usrGuess == dice.currentValue
-        // if yes increaseScore method called.
+        
+        
+        
         
         sc.close();
     }
