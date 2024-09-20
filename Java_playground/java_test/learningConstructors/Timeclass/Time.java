@@ -32,9 +32,10 @@ public class Time {
 
     }
 
-    private void validateTime(int h, int m, int s){ //Validates time and throws error.
-        try {                                       // Could add a system.exit() on error?
-            if (m < 0 || m > 59) {                  // Could add scanner & while loop to keep asking for a legal time
+    private void validateTime(int h, int m, int s){ 
+  //      while (true) add loop to keep checking for 
+        try {                                       
+            if (m < 0 || m > 59) {                  
                 throw new IllegalArgumentException("Time: bad minutes value: " + h + "." + m);        
             }
             if (s < 0 || s > 59) {
@@ -61,7 +62,6 @@ public class Time {
         hours, minutes, seconds);
     }
     public void toString12(int hours, int minutes, int seconds) { //prints in 12 hour format.
-
         String amPm = "PM";
         
         if (isAm(hours) == true) { //calls isAM metho to check AM/PM
@@ -74,8 +74,7 @@ public class Time {
     }
 
     public void incrSecond() { //increases seconds and calls min if seconds are at 59
-
-        if (this.seconds == 59) {
+        if (this.seconds == 59) {  //check if increase can be more concise.
             incrMin();
             this.seconds = 0;
         } else {
@@ -85,7 +84,6 @@ public class Time {
         
     }
     public void incrMin() { //increases min and calls incrhours if minutes are at 59 and reset to 0
-
         if (this.minutes != 59 && this.seconds == 59) {
             this.minutes++;
         } else if (this.minutes == 59) {
@@ -94,7 +92,6 @@ public class Time {
         }
     }
     public void incrHour() { //increases hours and resets if hrs at 23. 
-        
         if (this.hours != 23 && this.minutes == 59) {
             this.hours++;
         } else if (this.hours == 23){
@@ -102,13 +99,13 @@ public class Time {
         }
     }
     public void increaseTime(int incrAmount) { //increase time methos with loop, calls incrsec
-    for (int i = 0; i < incrAmount; i++) {      
-        incrSecond();
+        for (int i = 0; i < incrAmount; i++) {      
+            incrSecond();
+            }
+            validateTime(this.hours, this.minutes, this.seconds);
         }
-        validateTime(this.hours, this.minutes, this.seconds);
-    }
 
-    public int compareTo(int otherhour, int othermin, int othersec) { //compares hrs, mins, secs
+    public int compareTo(int otherhour, int othermin, int othersec) { //compares hrs, mins, secs      
         if (this.hours - otherhour != 0 ) {                           
            return this.hours - otherhour;
         } else if (this.minutes - othermin != 0) {
@@ -118,8 +115,7 @@ public class Time {
         } else {
             return 0;
         }
-    
-        
+       
     }
 }
 
@@ -129,7 +125,7 @@ class Main {
     public static void main(String[] args) {
 
         Time time1 = new Time(14, 0, 0);
-        time1.toString(time1.hours, time1.minutes, time1.seconds);
+        time1.toString(time1.hours, time1.minutes, time1.seconds); //make prints statements nice. like Time: 21:23:11?
         
         time1.increaseTime(3600); //increases time by seconds
 
