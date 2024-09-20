@@ -35,13 +35,13 @@ public class Time {
     private void validateTime(int h, int m, int s){
         try {
             if (m < 0 || m > 59) {
-                throw new IllegalArgumentException("Time: bad value: " + h + "." + m);        
+                throw new IllegalArgumentException("Time: bad minutes value: " + h + "." + m);        
             }
             if (s < 0 || s > 59) {
-                throw new IllegalArgumentException("Time: bad value: " + h + "." + m + "." + s);
+                throw new IllegalArgumentException("Time: bad seconds value: " + h + "." + m + "." + s);
             }
             if (h < 0 || h > 23) {
-                throw new IllegalArgumentException("Time: bad value: " + h + "." + m);
+                throw new IllegalArgumentException("Time: bad hour value: " + h + "." + m);
             }
         } catch (IllegalArgumentException e) {
             System.out.println("Error caught in constructor: " + e.getMessage());
@@ -75,38 +75,53 @@ public class Time {
 
     public void incrSecond() {
 
-        if (this.seconds >= 59) {
+        if (this.seconds == 59) {
+            incrMin();
             this.seconds = 0;
-            this.minutes++;
         } else {
             this.seconds++;
         }
         
         
     }
-    public void incrMin() { // fix so minute cant be 60
+    public void incrMin() { 
         
-        if (this.minutes == 59) {
-            this.minutes = 0;
-            this.hours++;
-        } else {
+        if (this.minutes != 59 && this.seconds == 59) {
             this.minutes++;
+        } else if (this.minutes == 59) {
+            incrHour();
+            this.minutes = 0;
         }
     }
     public void incrHour() {
         
-        if (this.hours == 23) {
-            this.hours = 0;
-        } else {
+        if (this.hours != 23 && this.minutes == 59) {
             this.hours++;
+        } else if (this.hours == 23){
+            this.hours = 0;
         }
     }
     public void increaseTime(int incrAmount) {
     for (int i = 0; i < incrAmount; i++) {
-  //      System.out.println(this.seconds);
+        
         incrSecond();
 
         }
+        validateTime(this.hours, this.minutes, this.seconds);
+    }
+
+    public int compareTo(int otherhour, int othermin, int othersec) {
+        if (this.hours - otherhour != 0 ) {
+           return this.hours - otherhour;
+        } else if (this.minutes - othermin != 0) {
+            return this.minutes - othermin; 
+        } else if (this.seconds - othersec != 0) {
+            return this.seconds - othersec;
+        } else {
+            return 0;
+        }
+    
+        
     }
 }
 
@@ -121,5 +136,7 @@ class Main {
         time1.increaseTime(3600);
 
         time1.toString(time1.hours, time1.minutes, time1.seconds);
+
+        System.out.println(time1.compareTo(6, 0, 0));
     }
 }
