@@ -86,7 +86,7 @@ class DiceGame {
             int usrGuess = sc.nextInt();// player guess = scanner object
 
             player1.rollDice();
-
+            //future update, add a 2nd guess. and the program will tell you under or over.
             if (usrGuess == player1.getDieValue()) {// check if player usrGuess == dice.currentValue
                 player1.increaseScore(); // if yes increaseScore method called.
                 System.out.println("Hurray! You guessed correctly!\nYour current score is: " + player1.getPoint());
