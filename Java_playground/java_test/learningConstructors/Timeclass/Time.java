@@ -13,7 +13,6 @@ public class Time {
         this.minutes = m;
     }
     public Time(int h, int m, int s) {
-        validateTime(h, m, s);
         setTime(h, m, s);
     }
     public int getHours() {
@@ -49,12 +48,65 @@ public class Time {
         } 
     }
 
+    public boolean isAm(int value) {
+        if (value < 12) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void toString(int hours, int minutes, int seconds) {
-        System.out.printf("%d:%02d:%02d", 
+        System.out.printf("%02d:%02d:%02d\n", 
         this.hours, this.minutes, this.seconds);
     }
     public void toString12(int hours, int minutes, int seconds) {
 
+        String amPm = "PM";
+        
+        if (isAm(this.hours) == true) {
+            amPm = "AM";
+        }
+        if (this.hours > 12) {
+            this.hours -= 12;
+        }
+        System.out.printf("%d:%02d:%02d %s\n", this.hours, this.minutes, this.seconds, amPm);
+    }
+
+    public void incrSecond() {
+
+        if (this.seconds >= 59) {
+            this.seconds = 0;
+            this.minutes++;
+        } else {
+            this.seconds++;
+        }
+        
+        
+    }
+    public void incrMin() { // fix so minute cant be 60
+        
+        if (this.minutes == 59) {
+            this.minutes = 0;
+            this.hours++;
+        } else {
+            this.minutes++;
+        }
+    }
+    public void incrHour() {
+        
+        if (this.hours == 23) {
+            this.hours = 0;
+        } else {
+            this.hours++;
+        }
+    }
+    public void increaseTime(int incrAmount) {
+    for (int i = 0; i < incrAmount; i++) {
+  //      System.out.println(this.seconds);
+        incrSecond();
+
+        }
     }
 }
 
@@ -62,7 +114,12 @@ public class Time {
 class Main {
 
     public static void main(String[] args) {
-        Time time1 = new Time(14, 2, 51);
+
+        Time time1 = new Time(5, 0, 0);
+        time1.toString(time1.hours, time1.minutes, time1.seconds);
+        
+        time1.increaseTime(3600);
+
         time1.toString(time1.hours, time1.minutes, time1.seconds);
     }
 }
