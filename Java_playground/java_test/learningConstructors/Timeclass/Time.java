@@ -58,19 +58,19 @@ public class Time {
 
     public void toString(int hours, int minutes, int seconds) { //prints in 24 hour format
         System.out.printf("%02d:%02d:%02d\n", 
-        this.hours, this.minutes, this.seconds);
+        hours, minutes, seconds);
     }
     public void toString12(int hours, int minutes, int seconds) { //prints in 12 hour format.
 
         String amPm = "PM";
         
-        if (isAm(this.hours) == true) { //calls isAM metho to check AM/PM
+        if (isAm(hours) == true) { //calls isAM metho to check AM/PM
             amPm = "AM";
         }
-        if (this.hours > 12) { // turns 24 format -> 12 hr format.
-            this.hours -= 12;
+        if (hours > 12) { // turns 24 format -> 12 hr format.
+            hours -= 12;
         }
-        System.out.printf("%d:%02d:%02d %s\n", this.hours, this.minutes, this.seconds, amPm);
+        System.out.printf("%d:%02d:%02d %s\n", hours, minutes, seconds, amPm);
     }
 
     public void incrSecond() { //increases seconds and calls min if seconds are at 59
@@ -128,13 +128,14 @@ class Main {
 
     public static void main(String[] args) {
 
-        Time time1 = new Time(5, 0, 0);
+        Time time1 = new Time(14, 0, 0);
         time1.toString(time1.hours, time1.minutes, time1.seconds);
         
-        time1.increaseTime(3600);
+        time1.increaseTime(3600); //increases time by seconds
 
         time1.toString(time1.hours, time1.minutes, time1.seconds);
+        time1.toString12(time1.hours, time1.minutes, time1.seconds);
 
-        System.out.println(time1.compareTo(6, 0, 0));
-    }
+        System.out.println(time1.compareTo(6, 0, 0)); //compares times, and prints a number.
+    }                                                                             
 }
