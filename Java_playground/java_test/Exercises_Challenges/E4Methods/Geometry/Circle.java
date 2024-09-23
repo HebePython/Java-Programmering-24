@@ -7,22 +7,19 @@ public class Circle {
     public Circle() {}
 
     public Circle (double radius, double diameter) { //constructor
-        setRadius(radius);
-        setDiameter(diameter);
+        this.radius = radius;
+        this.diameter = diameter;
     }
 
     public double getRadius() {
         return radius;
     }
-
     public double getDiameter() {
         return diameter;
     }
-
     public void setDiameter(double diameter) {
         this.diameter = diameter;
     }
-
     public void setRadius(double radius) {
         this.radius = radius;
     }
@@ -82,11 +79,11 @@ class GeometryTester {
     public static void main(String[] args) {
 
         Circle temp1 = new Circle();
-        System.out.println(temp1.CircleArea(2.5, 0));
-        System.out.println(temp1.CircleCircm(4));
+        System.out.println("Circle area: " + temp1.circleArea(2.5, 0) + " CM");
+        System.out.println("Circle circumference: " + temp1.circleCircm(4) + " CM");
 
         Rectangle temp2 = new Rectangle();
-        System.out.println(temp2.rectangleArea(2, 2));
-        System.out.println(temp2.rectanglePerimeter(2, 2));
+        System.out.println("Rectangle area: " + temp2.rectangleArea(2, 2) + " CM");
+        System.out.println("Rectangle perimeter: " + temp2.rectanglePerimeter(2, 2) + " CM");
     }
 }
