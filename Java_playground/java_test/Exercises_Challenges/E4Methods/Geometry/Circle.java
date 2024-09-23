@@ -27,7 +27,7 @@ public class Circle {
         this.radius = radius;
     }
 
-    public double CircleArea (double r, double d) {
+    public double circleArea (double r, double d) {
         double y = 0;
         if (r != 0) {
             y = Math.pow(r, 2) * Math.PI; //if have radius
@@ -37,7 +37,7 @@ public class Circle {
         return y; 
     } 
 
-    public double CircleCircm(double r) {
+    public double circleCircm(double r) {
         double y = r * 2.0 * Math.PI;
         return y;
     }
@@ -68,10 +68,10 @@ class Rectangle {
         this.length = length;
     }
 
-    public double RectangleArea(double height, double length) {
+    public double rectangleArea(double height, double length) {
         return height * length;
     }
-    public double RectanglePerimeter(double height, double length) {
+    public double rectanglePerimeter(double height, double length) {
         return height * length * 2.0;
     }
 
@@ -86,7 +86,7 @@ class GeometryTester {
         System.out.println(temp1.CircleCircm(4));
 
         Rectangle temp2 = new Rectangle();
-        System.out.println(temp2.RectangleArea(2, 2));
-        System.out.println(temp2.RectanglePerimeter(2, 2));
+        System.out.println(temp2.rectangleArea(2, 2));
+        System.out.println(temp2.rectanglePerimeter(2, 2));
     }
 }
