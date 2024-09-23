@@ -69,7 +69,6 @@ class DiceGame {
 
         Scanner sc = new Scanner(System.in);
         int maxRounds, rounds = 0;
-        // TO DO
         // import scanner, ask how many rounds to play.
         System.out.println("Hello, welcome to DiceGame\nHow many rounds would you like to play? ");
         maxRounds = sc.nextInt();
