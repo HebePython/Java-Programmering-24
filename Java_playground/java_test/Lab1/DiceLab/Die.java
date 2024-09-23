@@ -73,7 +73,7 @@ class DiceGame {
         // import scanner, ask how many rounds to play.
         System.out.println("Hello, welcome to DiceGame\nHow many rounds would you like to play? ");
         maxRounds = sc.nextInt();
-        sc.nextLine();
+        sc.nextLine(); //consumes next nextline, so we can accept
 
         // Ask for player name, create new player object.
         System.out.println("Enter your name: ");
