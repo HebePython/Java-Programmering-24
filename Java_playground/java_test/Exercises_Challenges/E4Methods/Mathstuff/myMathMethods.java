@@ -34,15 +34,17 @@ public class myMathMethods {
     }   
     
     public boolean isPrime(int n) { //kolla mera.
-        boolean x = true;
+        if (n <= 1) {
+            return false;
+        }
         for (int i = 2; i < n; i++) {
             if (n % i == 0) {
+                
                 return false;
             }
 
         }
-        
-        return x;
+        return true;
         
     }
 }
@@ -55,11 +57,9 @@ class Main {
         myMathMethods temp1 = new myMathMethods();
         System.out.println(temp1.calculateFactorial(5));
 
-        int n = 20;
+        int n = 17;
         System.out.println(temp1.calculateFibonacci(n));
-        for (int i = 0; i < n; i++){ 
-            System.out.println(temp1.isPrime(i));
-    }
+        System.out.println(temp1.isPrime(n));
 
     }
 }
