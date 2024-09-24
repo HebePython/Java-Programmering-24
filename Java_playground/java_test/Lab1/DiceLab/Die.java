@@ -11,14 +11,14 @@ public class Die {
         this.maxDiceValue = maxDiceValue;
     }
 
-    public void roll() { // set current value to int 1-maxDiceValue.
+    public void roll() { // Rolls dice method. 1-6. When called updates currentvalue variable to a new random value.
         this.currentValue = rand.nextInt(this.maxDiceValue) + 1;
     }
 
-    public int getMaxDie() { //getter
+    public int getMaxDie() { //getter of the max sides a dice can have. ((IS THIS NEEDED?))
         return maxDiceValue;
     }
-    public int getCurrentValue() {
+    public int getCurrentValue() { // returns current value of dice roll when called.
         return currentValue;
     }
 
@@ -27,56 +27,55 @@ public class Die {
 class Player {
     String name;
     int points = 0;
-    Die dice;
+    Die dice; // Die type, dice variable name. 
 
-    Player(String name) { //constructor
+    Player(String name) { //constructor, takes only name.
         this.name = name;
     }
 
-    public String getName(String name) {
+    public String getName() { // returns name of player when called.
         return name;
     }
 
-    public int getPoint() { //getter points
+    public int getPoint() { //getter points. returns current amount of points when called.
         return points;
     }
 
-    public void setPoint(int points) { //setter points
+    public void setPoint(int points) { //setter points ((IS THIS NEEDED?))
         this.points = points;
     }
 
-    public void rollDice() { //roll dice,
+    public void rollDice() { // rolls dice, dice is of Die type so it has .roll() method.
         dice.roll();
         System.out.println("You roll the dice and get: " + getDieValue());
     }
 
     public int getDieValue(){ //returns value of dice roll
-        return dice.getCurrentValue(); //<--get current value, thru getter.
+        return dice.getCurrentValue(); // get current value
     }
 
-    public void increaseScore() {
+    public void increaseScore() { //increases player score when called.
         this.points++;
     }
 
-    public void addDie() { //creates new die
-        this.dice = new Die(6); //add ask user for dice size, 6/8/10/12/20
+    public void addDie() { //creates new die for player and adds max dice value.
+        this.dice = new Die(6); 
     }
 }
 
-class DiceGame {
+class DiceGame { // main game 
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        int maxRounds, rounds = 0;
-        // import scanner, ask how many rounds to play.
+        int maxRounds, rounds = 0; // declare variables for max rounds and round counter.
         System.out.println("Hello, welcome to DiceGame\nHow many rounds would you like to play? ");
         maxRounds = sc.nextInt();
-        sc.nextLine(); //consumes next nextline, so we can accept
+        sc.nextLine(); //consumes next nextline, so we can ask 
 
         // Ask for player name, create new player object.
         System.out.println("Enter your name: ");
-        Player player1 = new Player(sc.nextLine());
+        Player player1 = new Player(sc.nextLine()); //creates player putting user input as name.
         player1.addDie(); //creates new dice object, 
 
         while (rounds < maxRounds) { 
@@ -95,7 +94,7 @@ class DiceGame {
             
         }
         
-        System.out.println("Game over, Thanks for playing " + player1.name + "\nYour score was: " + player1.getPoint());
+        System.out.println("Game over, Thanks for playing " + player1.getName() + "\nYour score was: " + player1.getPoint());
         
         sc.close();
     }
