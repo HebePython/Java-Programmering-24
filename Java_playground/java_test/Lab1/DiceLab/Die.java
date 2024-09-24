@@ -73,17 +73,16 @@ class DiceGame { // main game
         maxRounds = sc.nextInt();
         sc.nextLine(); //consumes next nextline, so we can ask 
 
-        // Ask for player name, create new player object.
-        System.out.println("Enter your name: ");
+        System.out.println("Enter your name: ");// Ask for player name, create new player object.
         Player player1 = new Player(sc.nextLine()); //creates player putting user input as name.
         player1.addDie(); //creates new dice object, 
 
         while (rounds < maxRounds) { 
-            rounds++; //round finished, add 1 to round counter.
+            rounds++; //round started, add 1 to round counter.
             System.out.println("Please guess a number 1-6: ");
             int usrGuess = sc.nextInt();// player guess = scanner object
 
-            player1.rollDice(); //future update, add a 2nd guess. and the program will tell you under or over.
+            player1.rollDice(); // call roll dice method from player1 in player class.
             
             if (usrGuess == player1.getDieValue()) {// check if player usrGuess == dice.currentValue
                 player1.increaseScore(); // if yes increaseScore method called.
