@@ -4,8 +4,8 @@ public class myStringMethods {
 
     public String reverseString(String s){
         String revString = "";
-        for (int i = s.length(); i > s.length(); i--) {
-            revString += s.charAt(i); 
+        for (int i = s.length(); i > 0; i--) {
+            revString += s.charAt(i - 1); 
         }
         return revString;
     }
