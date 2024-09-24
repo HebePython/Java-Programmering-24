@@ -59,7 +59,7 @@ class Player {
     }
 
     public void addDie() { //creates new die
-        this.dice = new Die(6);
+        this.dice = new Die(6); //add ask user for dice size, 6/8/10/12/20
     }
 }
 
