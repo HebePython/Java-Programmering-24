@@ -69,7 +69,7 @@ class DiceGame { // main game
 
         Scanner sc = new Scanner(System.in);
         int maxRounds, rounds = 0; // declare variables for max rounds and round counter.
-        System.out.println("Hello, welcome to DiceGame\nHow many rounds would you like to play? ");
+        System.out.println("Hello, welcome to DiceGame\nHow many rounds would you like to play? "); // asks for # rounds and then stores in maxRounds variable.
         maxRounds = sc.nextInt();
         sc.nextLine(); //consumes next nextline, so it doesn't skip nextLine for Player player1 = new Player(sc.nextLine())
 
