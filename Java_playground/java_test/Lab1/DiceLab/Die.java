@@ -71,7 +71,7 @@ class DiceGame { // main game
         int maxRounds, rounds = 0; // declare variables for max rounds and round counter.
         System.out.println("Hello, welcome to DiceGame\nHow many rounds would you like to play? ");
         maxRounds = sc.nextInt();
-        sc.nextLine(); //consumes next nextline, so we can ask 
+        sc.nextLine(); //consumes next nextline, so it doesn't skip nextLine for Player player1 = new Player(sc.nextLine())
 
         System.out.println("Enter your name: ");// Ask for player name, create new player object.
         Player player1 = new Player(sc.nextLine()); //creates player putting user input as name.
@@ -95,6 +95,6 @@ class DiceGame { // main game
         
         System.out.println("Game over, Thanks for playing " + player1.getName() + "\nYour score was: " + player1.getPoint());
         
-        sc.close();
+        sc.close(); //close scanner.
     }
 }
