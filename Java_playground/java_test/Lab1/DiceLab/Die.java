@@ -25,9 +25,9 @@ public class Die {
 }
 
 class Player {
-    String name;
-    int points = 0;
-    Die dice; // Die type, dice variable name. 
+    private String name;
+    private int points = 0;
+    private Die dice; // Die type, dice variable name. 
 
     Player(String name) { //constructor, takes only name.
         this.name = name;
@@ -47,7 +47,7 @@ class Player {
 
     public void rollDice() { // rolls dice, dice is of Die type so it has .roll() method.
         dice.roll();
-        System.out.println("You roll the dice and get: " + getDieValue());
+        System.out.println("You roll the dice!");
     }
 
     public int getDieValue(){ //returns value of dice roll
