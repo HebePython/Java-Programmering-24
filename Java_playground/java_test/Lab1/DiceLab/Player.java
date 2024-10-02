@@ -17,10 +17,6 @@ public class Player {
         return points;
     }
 
-    public void setPoint(int points) { //setter points ((IS THIS NEEDED?))
-        this.points = points;
-    }
-
     public void rollDice() { // rolls dice, dice is of Die type so it has .roll() method.
         dice.roll();
         System.out.println("You roll the dice!");
