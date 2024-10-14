@@ -1,8 +1,6 @@
 package Java_playground.java_test.Lab1.DiceLab;
 import java.util.Scanner;
 
-// run this before start:  javac -d "C:\\Users\\crowb\\AppData\\Roaming\\Code\\User\\workspaceStorage\\5ee4b45a6be3b0c7c4d2fa27572ef27b\\redhat.java\\jdt_ws\\Java-Programmering-24_fb875cf6\\bin" C:\\Java-Programmering-24\\Java_playground\\java_test\\Lab1\\DiceLab\\Main.java
-
 public class DiceGame {
     public static void main(String[] args) {
 
