@@ -1,4 +1,5 @@
 package Java_playground.java_test.Lab1.MPDiceLab;
+<<<<<<< HEAD
 import java.util.Random;
 
 public class Die {
@@ -22,3 +23,25 @@ public class Die {
     }
 
 }
+=======
+
+public class Die {
+    private int currentValue;
+    private int maxDiceValue;
+    private java.util.Random rand = new java.util.Random();
+
+    Die(int maxDiceValue) {
+        this.maxDiceValue = maxDiceValue;
+    }
+
+    public void roll() {
+        this.currentValue = rand.nextInt(this.maxDiceValue) + 1;
+    }
+
+    public int getCurrentValue() {
+        return currentValue;
+    }
+
+    
+}
+>>>>>>> bcf4dbbed5a46e21b3c7da1752cf3920673a5aad

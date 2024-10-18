@@ -14,9 +14,6 @@ public class Die {
         this.currentValue = rand.nextInt(this.maxDiceValue) + 1;
     }
 
-    public int getMaxDie() { //getter of the max sides a dice can have. ((IS THIS NEEDED?))
-        return maxDiceValue;
-    }
     public int getCurrentValue() { // returns current value of dice roll when called.
         return currentValue;
     }

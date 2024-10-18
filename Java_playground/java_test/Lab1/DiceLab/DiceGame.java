@@ -1,7 +1,11 @@
 package Java_playground.java_test.Lab1.DiceLab;
 import java.util.Scanner;
 
+<<<<<<< HEAD:Java_playground/java_test/Lab1/DiceLab/Main.java
 public class Main {
+=======
+public class DiceGame {
+>>>>>>> bcf4dbbed5a46e21b3c7da1752cf3920673a5aad:Java_playground/java_test/Lab1/DiceLab/DiceGame.java
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
