@@ -1,27 +1,48 @@
 package Java_playground.java_test.Lab1.DiceLab;
 import java.util.Scanner;
 
-<<<<<<< HEAD:Java_playground/java_test/Lab1/DiceLab/Main.java
-public class Main {
-=======
 public class DiceGame {
->>>>>>> bcf4dbbed5a46e21b3c7da1752cf3920673a5aad:Java_playground/java_test/Lab1/DiceLab/DiceGame.java
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         int maxRounds, rounds = 0; // declare variables for max rounds and round counter.
-        System.out.println("Hello, welcome to DiceGame\nHow many rounds would you like to play? "); // asks for # rounds and then stores in maxRounds variable.
-        maxRounds = sc.nextInt();
-        sc.nextLine(); //consumes next nextline, so it doesn't skip nextLine for Player player1 = new Player(sc.nextLine())
+
+        while (true) {
+            try {
+                System.out.println("Hello, welcome to DiceGame\nHow many rounds would you like to play? "); // asks for # rounds and then stores in maxRounds variable.
+                maxRounds = sc.nextInt();
+                sc.nextLine(); //consumes next nextline, so it doesn't skip nextLine for Player player1 = new Player(sc.nextLine())
+                break;
+            } catch (Exception e) {
+                System.out.println("Please enter a valid number.");
+                sc.nextLine();
+            }
+        }
 
         System.out.println("Enter your name: ");// Ask for player name, create new player object.
-        Player player1 = new Player(sc.nextLine()); //creates player putting user input as name.
-        player1.addDie(); //creates new dice object, 
+
+            Player player1 = new Player(sc.nextLine()); //creates player putting user input as name.
+            player1.addDie(); //creates new dice object, 
 
         while (rounds < maxRounds) { 
+            
             rounds++; //round started, add 1 to round counter.
             System.out.println("Please guess a number 1-6: ");
-            int usrGuess = sc.nextInt();// player guess = scanner object
+            int usrGuess = 0; // declare usrGuess before the inner while loop
+
+            while (true) {
+                try {
+                    usrGuess = sc.nextInt();// player guess = scanner object
+                    if (usrGuess >= 1 && usrGuess <= 6) {
+                        break;
+                    } else {
+                        System.out.println("Please enter a number between 1 and 6.");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Please enter a valid number.");
+                    sc.nextLine();
+                }
+            }
 
             player1.rollDice(); // call roll dice method from player1 in player class.
             
@@ -35,7 +56,7 @@ public class DiceGame {
         }
         
         System.out.println("Game over, Thanks for playing " + player1.getName() + "\nYour final score was: " + player1.getPoint());
-        
-        sc.close(); //close scanner.
+        sc.close();
+    
     }
 }

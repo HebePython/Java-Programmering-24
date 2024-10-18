@@ -1,4 +1,4 @@
-package Java_playground.java_test.Lab1.DiceLab;
+package Java_playground.java_test.Lab1.DiceLab.newdicegame;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -99,7 +99,9 @@ class DiceGame { // main game
             
         }
         
-        System.out.println("\nGame over, Thanks for playing " + player1.getName() + "\nYour final score is: " + player1.getPoint());
+        slowPrint("\nGame over, Thanks for playing");
+        System.err.printf(" ", player1.getName());
+        System.err.println(player1.getPoint());
         
         sc.close();
     }
