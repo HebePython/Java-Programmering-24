@@ -7,7 +7,7 @@ public class DiceGame {
         Scanner sc = new Scanner(System.in);
         int maxRounds, rounds = 0; // declare variables for max rounds and round counter.
 
-        while (true) {
+        while (true) { // loop until user enters a valid number
             try {
                 System.out.println("Hello, welcome to DiceGame\nHow many rounds would you like to play? "); // asks for # rounds and then stores in maxRounds variable.
                 maxRounds = sc.nextInt();
@@ -25,12 +25,12 @@ public class DiceGame {
             player1.addDie(); //creates new dice object, 
 
         while (rounds < maxRounds) { 
-            
+
             rounds++; //round started, add 1 to round counter.
             System.out.println("Please guess a number 1-6: ");
             int usrGuess = 0; // declare usrGuess before the inner while loop
 
-            while (true) {
+            while (true) { // loop until user enters a valid number
                 try {
                     usrGuess = sc.nextInt();// player guess = scanner object
                     if (usrGuess >= 1 && usrGuess <= 6) {
